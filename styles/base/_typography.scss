@@ -2,8 +2,16 @@
   font-weight: 400;
 }
 
+.text--bold {
+  font-weight: 700;
+}
+
 .text--light {
   color: $color-text;
+}
+
+.text--border {
+  border-bottom: 4px solid $color-secondary;
 }
 
 h1 {

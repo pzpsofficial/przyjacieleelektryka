@@ -1,0 +1,16 @@
+.section-hero {
+  padding-top: 7vh;
+  grid-column: 1/-1;
+  min-height: 100vh;
+  position: relative;
+
+  background-image: linear-gradient(
+    rgba($color-primary, 0.8),
+    rgba($color-primary, 0.8)
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

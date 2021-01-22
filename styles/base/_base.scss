@@ -8,6 +8,11 @@
   box-sizing: inherit;
 }
 
+::selection {
+  color: $color-text;
+  background-color: $color-secondary;
+}
+
 html {
   font-size: 62.5%;
 }

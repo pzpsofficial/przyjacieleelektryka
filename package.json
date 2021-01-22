@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/pzpsofficial/przyjacieleelektryka/issues"
   },
-  "homepage": "https://github.com/pzpsofficial/przyjacieleelektryka#readme"
+  "homepage": "https://github.com/pzpsofficial/przyjacieleelektryka#readme",
+  "dependencies": {
+    "typed.js": "^2.0.11"
+  }
 }

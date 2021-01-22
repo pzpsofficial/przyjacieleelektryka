@@ -4,6 +4,7 @@
   left: 0;
   width: 100%;
   min-height: 7vh;
+  z-index: 100;
 
   display: flex;
   justify-content: space-between;
@@ -47,7 +48,6 @@
       text-decoration: none;
       font-size: 2rem;
       text-transform: uppercase;
-      font-weight: 700;
       transition: color 0.3s ease-in;
 
       &:hover {

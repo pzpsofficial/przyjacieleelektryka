@@ -26,7 +26,7 @@
   &::before {
     top: 0;
     left: 0;
-    transform: translateX(100%) rotate(90deg);
+    transform: translateX(100%);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
@@ -34,9 +34,13 @@
   &::after {
     bottom: 0;
     left: 0;
-    transform: translateX(-100%) rotate(90deg);
+    transform: translateX(-100%);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+  }
+
+  &:hover {
+    color: $color-text !important;
   }
 
   &:hover::after,
