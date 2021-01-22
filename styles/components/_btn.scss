@@ -11,40 +11,28 @@
   backface-visibility: hidden;
   z-index: 1;
   overflow: hidden;
+  transition: all 0.3s ease-in;
 
-  &::after,
   &::before {
-    height: 50%;
+    height: 100%;
     content: '';
     z-index: -1;
     position: absolute;
     width: 100%;
-    background-color: $color-third;
+    background-color: rgba($color-third, 0.5);
     transition: transform 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-  }
-
-  &::before {
     top: 0;
     left: 0;
-    transform: translateX(100%);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
-
-  &::after {
-    bottom: 0;
-    left: 0;
-    transform: translateX(-100%);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    transform: translateX(110%) scale(1.1);
+    border-radius: 5px;
+    backface-visibility: hidden;
   }
 
   &:hover {
     color: $color-text !important;
   }
 
-  &:hover::after,
   &:hover::before {
-    transform: translateY(0);
+    transform: translateX(0) scale(1.1);
   }
 }

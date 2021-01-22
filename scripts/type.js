@@ -4,6 +4,7 @@ let options = {
   strings: ['Pszczoły', 'Młodzież', 'Talenty', 'Przyrodę', 'Potrzebujących'],
   typeSpeed: 150,
   backSpeed: 50,
+  smartBackspace: false,
   startDelay: 1000,
   backDelay: 1000,
   loop: true,

@@ -19,7 +19,7 @@
     ></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
       rel="stylesheet"
     />
 
@@ -51,10 +51,10 @@
       <nav class="header__nav">
         <ul class="header__nav__ul">
           <li class="header__nav__li">
-            <a href="#" class="header__nav__a">Strona główna</a>
+            <a href="#home" class="header__nav__a">Strona główna</a>
           </li>
           <li class="header__nav__li">
-            <a href="#" class="header__nav__a">O nas</a>
+            <a href="#about" class="header__nav__a">O nas</a>
           </li>
           <li class="header__nav__li">
             <a href="#" class="header__nav__a">Stowarzyszenie</a>
@@ -82,24 +82,76 @@
 
     <!-- Main -->
 
-    <main class="main">
-      <section class="section-hero">
-        <div class="bg-video">
-          <video class="bg-video__content" autoplay muted loop>
-            <source src="imgs/pszczoły.mp4" type="video/mp4" />
-            Your browser is not suported
-          </video>
+    <section class="section-hero" id="home">
+      <div class="bg-video">
+        <video class="bg-video__content" autoplay muted loop>
+          <source src="imgs/pszczoły.mp4" type="video/mp4" />
+          Your browser is not suported
+        </video>
+      </div>
+      <h1 class="text--light text--thin mb-small">
+        Stowarzyszenie, które pomaga
+        <span class="text--border">uczniom</span>.
+      </h1>
+      <h3 class="text--light mb-large">
+        <span class="text--thin">Wspieramy</span> <span class="typed"></span>
+      </h3>
+      <a href="#" class="btn text--bold mt-big">Więcej</a>
+    </section>
+
+    <section class="section-about" id="about">
+      <h2 class="mt-big mb-big text--green">Kim jesteśmy?</h2>
+      <div class="section-about__row">
+        <div class="section-about__row__content">
+          <p class="mb-medium">
+            Jesteśmy zgranym zespołem ludzi z pasją. Naszą misją jest ukazywanie
+            społeczeństwu cieakwych inicjatyw, które mogą wiele zmienić.
+            Wierzymy w ludzką życzliwość, w moc zwykłego uśmiechu i młodych
+            ludzi. Oprócz tego jesteśmy uczniami ZSEM im. gen. Józefa Kustronia
+            w Nowym Sączu.
+          </p>
+          <p>
+            Tym bardziej doceniamy działające przy naszej szkole Stowarzyszenie
+            Sądeckiego Elektryka. Wyrazem naszej wdzięczności jest poniższa
+            strona, która ma za zadanie służyć promocji działań wcześniej
+            wspomnianego stowarzyszenia. Zapraszamy Państwa do zapoznania się z
+            realizowanymi projektami!
+          </p>
+          <a href="#" class="btn mt-large">Stowarzyszenie</a>
         </div>
-        <h1 class="text--light text--thin mb-small">
-          Stowarzyszenie, które pomaga
-          <span class="text--border">uczniom</span>.
-        </h1>
-        <h3 class="text--light mb-large">
-          <span class="text--thin">Wspieramy</span> <span class="typed"></span>
-        </h3>
-        <a href="#" class="btn text--bold mt-big">Więcej</a>
-      </section>
-    </main>
+        <div class="section-about__row__img">
+          <img src="imgs/onas.jpg" alt="Zdjęcie rąk - symbol jedności" />
+        </div>
+      </div>
+      <h2 class="mt-big mb-big text--green">Stowarzyszenie</h2>
+      <div class="section-about__row">
+        <div class="section-about__row__img">
+          <img
+            src="imgs/stowarzyszenie.jpg"
+            alt="Zdjęcie zespołu - symbol stowarzyszenia"
+          />
+        </div>
+        <div class="section-about__row__content">
+          <p class="mb-medium">
+            Sądecki Elektryk to stowarzyszenie, które zostało założone przez
+            ludzi z pasją. Jak sami piszą na swojej stronie internetowej:
+          </p>
+          <p class="mb-medium text--italic">
+            “Nasza organizacja to narzędzie, dzięki któremu uczniowie,
+            nauczyciele, absolwenci będą mieli szanse pokazać swoje umiejętności
+            i pasje, rozwijać zainteresowania.”
+          </p>
+          <p>
+            Jako uczniowe czerpiemy nieopisane korzyści w związku z istnieniem
+            stowarzyszenia. Mamy możliwość rozwoju, nowych doświadczeń, wyjścia
+            ze swoimi umiejętnościami ku szerszemu gronu odbiorców. Zapraszamy
+            Państwa do zapoznania się z projektami realizowanymi przez
+            Stowarzyszenie Sądecki Elektryk!
+          </p>
+          <a href="#" class="btn mt-large">Projekty</a>
+        </div>
+      </div>
+    </section>
 
     <!-- Main -->
   </body>

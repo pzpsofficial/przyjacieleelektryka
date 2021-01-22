@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/pzpsofficial/przyjacieleelektryka#readme",
   "dependencies": {
+    "node-sass": "^5.0.0",
+    "parcel-bundler": "^1.12.4",
     "typed.js": "^2.0.11"
   }
 }
