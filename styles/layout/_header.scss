@@ -1,0 +1,58 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 7vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__burger {
+    display: none;
+  }
+
+  &__branding {
+    margin-left: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    i {
+      margin-right: 2rem;
+      color: $color-secondary;
+      font-size: 3rem;
+    }
+  }
+
+  &__nav {
+    margin-right: 3%;
+
+    &__ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__li {
+      &:not(:last-child) {
+        margin-right: 2.5rem;
+      }
+    }
+
+    &__a {
+      color: $color-text;
+      text-decoration: none;
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition: color 0.3s ease-in;
+
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+}

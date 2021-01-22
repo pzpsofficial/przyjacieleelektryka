@@ -1,0 +1,46 @@
+.btn {
+  display: inline-block;
+  background-color: $color-secondary;
+  border-radius: 5px;
+  padding: 1.5rem 4rem;
+  font-size: 3.5rem;
+  font-family: inherit;
+  text-decoration: none;
+  color: $color-text;
+  position: relative;
+  backface-visibility: hidden;
+  z-index: 1;
+  overflow: hidden;
+
+  &::after,
+  &::before {
+    height: 50%;
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    background-color: $color-third;
+    transition: transform 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    transform: translateX(100%) rotate(90deg);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  &::after {
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%) rotate(90deg);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  &:hover::after,
+  &:hover::before {
+    transform: translateY(0);
+  }
+}

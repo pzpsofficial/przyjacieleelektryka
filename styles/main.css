@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background-color: #f1f1e8;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); }
+
+.text--thin {
+  font-weight: 400; }
+
+.text--light {
+  color: #f1f1e8; }
+
+h1 {
+  font-size: 6rem; }
+
+h2 {
+  font-size: 5rem; }
+
+h3 {
+  font-size: 4rem; }
+
+h4 {
+  font-size: 3rem; }
+
+.mb-big {
+  margin-bottom: 3rem; }
+
+.mb-medium {
+  margin-bottom: 2rem; }
+
+.mb-small {
+  margin-bottom: 1rem; }
+
+.mt-big {
+  margin-top: 3rem; }
+
+.mt-medium {
+  margin-top: 2rem; }
+
+.mt-small {
+  margin-top: 1rem; }
+
+.btn {
+  display: inline-block;
+  background-color: #81b214;
+  border-radius: 5px;
+  padding: 1.5rem 4rem;
+  font-size: 3.5rem;
+  font-family: inherit;
+  text-decoration: none;
+  color: #f1f1e8;
+  position: relative;
+  backface-visibility: hidden;
+  z-index: 1;
+  overflow: hidden; }
+  .btn::after, .btn::before {
+    height: 50%;
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    background-color: #206a5d;
+    transition: transform 1s cubic-bezier(0.68, -0.6, 0.32, 1.6); }
+  .btn::before {
+    top: 0;
+    left: 0;
+    transform: translateX(100%) rotate(90deg);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; }
+  .btn::after {
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%) rotate(90deg);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; }
+  .btn:hover::after, .btn:hover::before {
+    transform: translateY(0); }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 7vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .header__burger {
+    display: none; }
+  .header__branding {
+    margin-left: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .header__branding i {
+      margin-right: 2rem;
+      color: #81b214;
+      font-size: 3rem; }
+  .header__nav {
+    margin-right: 3%; }
+    .header__nav__ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+    .header__nav__li:not(:last-child) {
+      margin-right: 2.5rem; }
+    .header__nav__a {
+      color: #f1f1e8;
+      text-decoration: none;
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition: color 0.3s ease-in; }
+      .header__nav__a:hover {
+        color: #81b214; }

@@ -1,0 +1,20 @@
+{
+  "name": "przyjacieleelektryka",
+  "version": "1.0.0",
+  "description": "Strona internetowa Przyjaciele Elektryka",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "watch:sass": "node-sass styles/main.scss styles/main.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pzpsofficial/przyjacieleelektryka.git"
+  },
+  "author": "Bartosz Karpiel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pzpsofficial/przyjacieleelektryka/issues"
+  },
+  "homepage": "https://github.com/pzpsofficial/przyjacieleelektryka#readme"
+}
