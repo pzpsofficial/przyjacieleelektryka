@@ -18,9 +18,28 @@
     }
 
     &__img {
-      padding: 2rem;
+      //   padding: 2rem;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        background-color: rgba($color: $color-secondary, $alpha: 0.5);
+        transition: transform 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+      }
+
+      &:hover::before {
+        transform: translateX(0);
+      }
 
       img {
+        border-radius: 5px;
         box-shadow: $shadow-medium;
         display: block;
         width: 100%;
