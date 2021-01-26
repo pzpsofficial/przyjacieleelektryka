@@ -203,26 +203,94 @@ p {
       justify-content: center;
       align-items: flex-start; }
     .section-about__row__img {
+      padding: 2rem;
       position: relative;
       overflow: hidden; }
-      .section-about__row__img::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform: translateX(100%);
-        background-color: rgba(129, 178, 20, 0.5);
-        transition: transform 1s cubic-bezier(0.68, -0.6, 0.32, 1.6); }
-      .section-about__row__img:hover::before {
-        transform: translateX(0); }
       .section-about__row__img img {
         border-radius: 5px;
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
         display: block;
         width: 100%;
         margin: auto; }
+
+.section-projects {
+  grid-column: 2/-2;
+  display: grid;
+  grid-template-columns: 1fr; }
+  .section-projects__buttons {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 2rem;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 30rem)); }
+    .section-projects__buttons__button {
+      display: inline-block;
+      padding: 3rem 7rem;
+      border-radius: 5px;
+      background-color: #131313;
+      color: #f1f1e8; }
+
+.active {
+  background-color: #81b214; }
+
+.slider {
+  width: 100%;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  position: relative;
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center; }
+
+.arrow-left,
+.arrow-right {
+  position: absolute;
+  top: 50%;
+  font-size: 5rem;
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out; }
+  .arrow-left:hover,
+  .arrow-right:hover {
+    cursor: pointer;
+    opacity: 0.8; }
+
+.arrow-left {
+  transform: translate(-50%, -50%);
+  left: 0; }
+
+.arrow-right {
+  transform: translate(50%, -50%);
+  right: 0; }
+
+.dot {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(19, 19, 19, 0.5);
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in; }
+
+.active {
+  background-color: rgba(19, 19, 19, 0.8); }
+
+.imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; }
+  .imgs img {
+    max-width: 300px;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    border-radius: 5px; }
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .indicators .dot:not(:last-child) {
+    margin-right: 1.3rem; }
 
 
 /*# sourceMappingURL=/main.d2070829.css.map */
