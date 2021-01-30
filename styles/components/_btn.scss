@@ -12,6 +12,8 @@
   z-index: 1;
   overflow: hidden;
   transition: all 0.3s ease-in;
+  outline: none;
+  border: none;
 
   &::before {
     height: 100%;
@@ -19,7 +21,7 @@
     z-index: -1;
     position: absolute;
     width: 100%;
-    background-color: rgba($color-third, 0.5);
+    background-color: darken($color-secondary, 4%);
     transition: transform 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
     top: 0;
     left: 0;
@@ -30,6 +32,7 @@
 
   &:hover {
     color: $color-text !important;
+    cursor: pointer;
   }
 
   &:hover::before {

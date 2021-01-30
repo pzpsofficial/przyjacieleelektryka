@@ -1,0 +1,14 @@
+.footer {
+  grid-column: 1 / end;
+  padding: 3rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-primary;
+
+  i {
+    font-size: 10rem;
+  }
+}

@@ -7,7 +7,7 @@
 
     <!-- Favicon -->
 
-    <link rel="shortcut icon" type="image/png" href="imgs/favicon.svg" />
+    <!-- <link rel="shortcut icon" type="image/png" href="imgs/favicon.svg" /> -->
 
     <!-- Favicon -->
 
@@ -34,6 +34,7 @@
     <!-- Skrypty (moje) -->
 
     <script defer src="scripts/type.js"></script>
+    <script defer src="scripts/slider.js"></script>
 
     <!-- Skrypty (moje) -->
   </head>
@@ -171,22 +172,26 @@
       </div>
 
       <div class="slider">
-        <div class="content">
-          <h4 class="mt-big mb-big text--green">
-            Nie - bo nie mam czasu - V edycja
-          </h4>
-          <p class="mb-medium">
-            Projekt mający na celu zorganizowanie czasu dla uczniow internatu
-            sąsiadującego ze szkołą! Przewidziane warsztaty dotyczące
-            uzależnień, wyjścia na basen, siłownię, do kina, zawody szachowe,
-            turniej piłki nożnej oraz tenisa stołowego!
-          </p>
-          <div class="imgs">
-            <img src="./imgs/pingpong.jpg" alt="Ping pong" />
-            <img src="./imgs/popcorn.jpg" alt="Pop corn" />
-            <img src="./imgs/pilka.jpg" alt="Piłka nożna" />
+        <div class="wrapper">
+          <div class="slide" data-index="1">
+            <div class="content">
+              <h4 class="mt-big mb-big text--green">
+                Nie - bo nie mam czasu - V edycja
+              </h4>
+              <p class="mb-medium">
+                Projekt mający na celu zorganizowanie czasu dla uczniow
+                internatu sąsiadującego ze szkołą! Przewidziane warsztaty
+                dotyczące uzależnień, wyjścia na basen, siłownię, do kina,
+                zawody szachowe, turniej piłki nożnej oraz tenisa stołowego!
+              </p>
+              <div class="imgs">
+                <img src="./imgs/pingpong.jpg" alt="Ping pong" />
+                <img src="./imgs/popcorn.jpg" alt="Pop corn" />
+                <img src="./imgs/pilka.jpg" alt="Piłka nożna" />
+              </div>
+              <a href="#" class="btn mt-medium">Więcej</a>
+            </div>
           </div>
-          <a href="#" class="btn mt-medium">Więcej</a>
         </div>
         <div class="indicators mt-big mb-big">
           <div class="dot active"></div>
@@ -204,6 +209,97 @@
       </div>
     </section>
 
+    <section class="section-managment">
+      <h2 class="text--green mt-big mb-big">Zarząd</h2>
+      <div class="section-managment__cards">
+        <div class="section-managment__card">
+          <img src="./imgs/zarzad.png" alt="Zdjęcie mareczka ez" />
+          <div class="content">
+            <p>
+              Pan Marek Ryglewicz jest człowiekiem pełnym pasji. Każdego darzy
+              ogromną sympatią i mobilizuje do działania. Jest pomysłodawcą oraz
+              prezesem stowarzyszenia. To on zdobywa sponsorów, organizuje
+              konkursy i świetne projekty!
+            </p>
+            <p class="mb-medium text--italic">
+              “Nasza organizacja to narzędzie, dzięki któremu uczniowie,
+              nauczyciele, absolwenci będą mieli szanse pokazać swoje
+              umiejętności i pasje, rozwijać zainteresowania.”
+            </p>
+          </div>
+          <h3 class="section-managment__card__h3 text--light text--thin">
+            Marek Ryglewicz
+          </h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-donate">
+      <h2 class="text--green mt-big mb-big">Wsparcie</h2>
+      <p>
+        Po zapoznaniu się z naszymi działaniami masz wrażenie, że chcesz
+        dołączyć do grona wspierających pracę Stowarzyszenia Sądecki Elektryk?
+        <span class="text--bold">Rozważ wpłatę na nasze konto bankowe!</span>
+        Być może roliczasz PIT i chcesz przekazać nam 1% swojego podatku? Każda
+        złotówka to możliwości do rozwoju dla młodych ludzi.
+      </p>
+
+      <div class="section-donate__bank mt-medium">
+        <i class="fas fa-piggy-bank mb-medium"></i>
+        <h4 class="text--dark text--thin">Bank BGŻ BNP Paribas S. A</h4>
+        <h4 class="text--dark text--bold">98 2030 0045 1110 0000 0387 2230</h4>
+        <i class="fas fa-clipboard"></i>
+      </div>
+    </section>
+
+    <section class="section-contact">
+      <h2 class="text--green mt-big mb-big">Kontakt</h2>
+      <p>
+        Masz pytania? Chcesz dowiedzieć się więcej, a może uczestniczyć w pracy
+        stowarzyszenia? Napisz do nas już dziś ! Odpowiemy Ci w ciągu 24 godzin!
+      </p>
+
+      <form action="#" class="form mt-big">
+        <div class="form__content">
+          <label>
+            Imię
+            <input type="text" />
+          </label>
+          <label>
+            E-mail
+            <input type="text" />
+          </label>
+          <label>
+            Wiadomość
+            <textarea rows="10"></textarea>
+          </label>
+          <button class="btn mt-large">Wyślij</button>
+        </div>
+      </form>
+    </section>
+
     <!-- Main -->
+
+    <!-- Footer -->
+
+    <footer class="footer mt-large">
+      <h3 class="text--light text--thin">
+        Przyjaciele<span class="text--very--bold">Elektryka</span>
+      </h3>
+      <i class="fas fa-bolt text--green mt-big mb-big"></i>
+      <p class="text--center text--light">
+        Strona wykonana przez:
+        <a
+          class="link"
+          target="_blank"
+          href="https://bartoszkarpiel.netlify.app/"
+          >Bartosz Karpiel</a
+        >
+        - uczeń klasy drugiej ZSEM <br />
+        © 2021 Wszelkie prawa zastrzeżone przez PrzyjacieleElektryka
+      </p>
+    </footer>
+
+    <!-- Footer -->
   </body>
 </html>
