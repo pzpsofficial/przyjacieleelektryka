@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
+    "build": "parcel build index.html",
     "watch:sass": "node-sass styles/main.scss styles/main.css -w"
   },
   "repository": {
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/pzpsofficial/przyjacieleelektryka#readme",
   "dependencies": {
+    "gsap": "^3.6.0",
     "node-sass": "^5.0.0",
     "parcel-bundler": "^1.12.4",
     "typed.js": "^2.0.11"

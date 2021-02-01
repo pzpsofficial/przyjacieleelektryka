@@ -1,9 +1,9 @@
 .btn {
   display: inline-block;
   background-color: $color-secondary;
-  border-radius: 5px;
-  padding: 1.5rem 4rem;
-  font-size: 3.5rem;
+  border-radius: 150px;
+  padding: 0.7rem 5rem;
+  font-size: 3rem;
   font-family: inherit;
   text-decoration: none;
   color: $color-text;
@@ -26,7 +26,7 @@
     top: 0;
     left: 0;
     transform: translateX(110%) scale(1.1);
-    border-radius: 5px;
+    border-radius: 150px;
     backface-visibility: hidden;
   }
 

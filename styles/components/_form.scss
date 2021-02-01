@@ -1,34 +1,19 @@
 .form {
-  border-radius: 5px;
   padding: 3rem;
-  background-image: linear-gradient(
-      105deg,
-      $color-primary 0%,
-      $color-primary 55%,
-      transparent 55%,
-      transparent 100%
-    ),
-    url('./../imgs/kontakt.jpg');
-
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-
-  box-shadow: $shadow-big;
-
-  &__content {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+  min-width: 70rem;
+  max-width: 90rem;
+  border-radius: 10px;
+  background-color: $color-text;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
   label {
     width: 90%;
     display: flex;
     flex-direction: column;
-    color: $color-text;
+    color: $color-primary;
     font-weight: 300;
     font-size: 1.8rem;
     &:not(:last-of-type) {
@@ -39,26 +24,32 @@
   input,
   textarea {
     font-family: inherit;
-    font-size: 2rem;
+    font-size: 1.7rem;
+    font-weight: 300;
     padding: 0.8rem 1.5rem;
     border-radius: 5px;
     outline: none;
     border: none;
-    background-color: rgba($color: #fff, $alpha: 0.5);
+    background-color: rgba($color: $color-primary, $alpha: 0.8);
     margin-top: 0.3rem;
     transition: all 0.3s ease-in;
+    color: $color-text;
 
     &:focus {
-      background-color: rgba($color: #fff, $alpha: 0.8);
+      background-color: rgba($color: $color-primary, $alpha: 1);
     }
   }
 
   textarea {
     resize: none;
     padding: 1.5rem;
+    height: 20rem;
   }
 
   button {
-    margin-top: 6rem;
+    i {
+      margin-right: 2rem;
+    }
+    margin-top: 3rem;
   }
 }

@@ -16,13 +16,16 @@
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
+  scroll-padding-top: 7.9rem;
+  overflow-x: hidden;
 }
 
 body {
-  background-color: $color-text;
+  overflow-x: hidden;
+  background-color: $color-primary;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-
+  font-family: 'Poppins', sans-serif;
+  color: $color-text;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }

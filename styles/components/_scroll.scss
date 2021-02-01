@@ -1,0 +1,48 @@
+.scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 5rem;
+  border-radius: 100px;
+  background-color: transparent;
+  border: 4px solid #fff;
+  animation: animateScroll 1s ease-in infinite;
+  transition: all 0.5s ease-in;
+
+  &:hover {
+    border-color: $color-secondary;
+  }
+
+  &:hover::before {
+    background-color: $color-secondary;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all 0.5s ease-in;
+  }
+}
+
+@keyframes animateScroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(0.5rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

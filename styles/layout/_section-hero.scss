@@ -1,12 +1,12 @@
 .section-hero {
-  padding-top: 7vh;
+  padding-top: 8vh;
   grid-column: 1/-1;
   min-height: 100vh;
   position: relative;
 
-  background-image: linear-gradient(
-    rgba($color-primary, 0.75),
-    rgba($color-primary, 0.75)
+  background-image: radial-gradient(
+    rgba($color-primary, 0.8),
+    rgba($color-primary, 1)
   );
 
   display: flex;

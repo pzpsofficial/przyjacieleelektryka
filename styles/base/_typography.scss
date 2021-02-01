@@ -6,6 +6,10 @@
   font-weight: 500;
 }
 
+.text--semi--bold {
+  font-weight: 600;
+}
+
 .text--very--bold {
   font-weight: 700;
 }
@@ -23,14 +27,20 @@
 }
 
 .text--border {
-  border-bottom: 4px solid $color-secondary;
+  border-bottom: 1.9rem solid transparent;
+  border-image: url('./../imgs/border.png') 100;
 }
 
 .text--italic {
   font-style: italic;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   border-left: 4px solid $color-secondary;
   padding-left: 2rem;
+}
+
+.text--more {
+  font-weight: 300;
+  font-style: italic;
 }
 
 .text--center {
@@ -49,6 +59,7 @@ h2 {
   text-transform: uppercase;
   text-align: center;
   font-size: 5rem;
+  width: 90%;
 }
 
 h3 {
@@ -56,10 +67,17 @@ h3 {
 }
 
 h4 {
-  font-size: 2.8rem;
+  font-size: 3rem;
 }
 
 p {
-  font-size: 2.3rem;
-  color: $color-primary;
+  font-size: 2.1rem;
+  color: $color-text;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
 }
