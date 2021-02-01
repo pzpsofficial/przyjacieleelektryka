@@ -418,6 +418,7 @@ h4 {
       .section .img {
         grid-row: 1/2; } }
     .section .img img {
+      display: block;
       width: auto;
       min-height: 100%;
       min-width: 100%; }
