@@ -21,4 +21,14 @@
   a {
     color: $color-secondary;
   }
+
+  @include respond(tab-port) {
+    i {
+      font-size: 6rem;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+    }
+  }
 }

@@ -6,6 +6,10 @@
   min-height: 8vh;
   z-index: 100;
 
+  @include respond(tab-port) {
+    min-height: 10vh;
+  }
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,6 +18,23 @@
 
   &__burger {
     display: none;
+    margin-right: 3%;
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include respond(first-change) {
+      display: block;
+      z-index: 100;
+      .line {
+        height: 0.35rem;
+        width: 2.5rem;
+        background-color: #fff;
+        &:not(:last-of-type) {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
   }
 
   &__branding {
@@ -26,22 +47,52 @@
       margin-right: 2rem;
       color: $color-text;
       font-size: 3rem;
+
+      @include respond(tab-port) {
+        font-size: 2.5rem;
+        margin-right: 1rem;
+      }
     }
   }
 
   &__nav {
     margin-right: 3%;
+    transition: all 0.8s ease-in-out;
+
+    @include respond(first-change) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: 0;
+      background-color: $color-primary;
+      width: 100%;
+      height: 100vh;
+      transform: translateX(100%);
+    }
 
     &__ul {
       list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @include respond(first-change) {
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      }
     }
 
     &__li {
       &:not(:last-child) {
         margin-right: 2.5rem;
+      }
+
+      @include respond(first-change) {
+        &:not(:last-child) {
+          margin-right: 0;
+        }
       }
     }
 
@@ -56,10 +107,22 @@
       &:hover {
         color: $color-secondary;
       }
+
+      @include respond(first-change) {
+        font-size: 3rem;
+      }
+
+      @include respond(tab-port) {
+        font-size: 2rem;
+      }
     }
   }
 }
 
 .header.active {
   background-color: darken($color-primary, 5%);
+}
+
+.header__nav.active {
+  transform: translateX(0);
 }

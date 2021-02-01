@@ -15,6 +15,14 @@
   outline: none;
   border: none;
 
+  @include respond(tab-land) {
+    font-size: 2.6rem;
+  }
+
+  @include respond(tab) {
+    font-size: 2.2rem;
+  }
+
   &::before {
     height: 100%;
     content: '';

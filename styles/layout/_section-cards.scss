@@ -6,4 +6,9 @@
   justify-content: center;
   align-items: stretch;
   grid-template-columns: repeat(auto-fit, minmax(min-content, 45rem));
+
+  @include respond(tab-port) {
+    grid-column: 1/-1;
+    padding: 5rem 5rem;
+  }
 }

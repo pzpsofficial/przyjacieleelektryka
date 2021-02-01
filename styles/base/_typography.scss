@@ -26,16 +26,15 @@
   color: $color-primary;
 }
 
-.text--border {
-  border-bottom: 1.9rem solid transparent;
-  border-image: url('./../imgs/border.png') 100;
-}
-
 .text--italic {
   font-style: italic;
   font-size: 2.4rem;
   border-left: 4px solid $color-secondary;
   padding-left: 2rem;
+
+  @include respond(tab) {
+    font-size: 2.1rem;
+  }
 }
 
 .text--more {
@@ -53,6 +52,15 @@
 
 h1 {
   font-size: 6rem;
+
+  @include respond(tab-port) {
+    font-size: 5rem;
+  }
+
+  @include respond(tab) {
+    font-size: 3.7rem;
+    font-weight: 600;
+  }
 }
 
 h2 {
@@ -60,19 +68,43 @@ h2 {
   text-align: center;
   font-size: 5rem;
   width: 90%;
+
+  @include respond(tab-port) {
+    font-size: 4rem;
+  }
+
+  @include respond(tab) {
+    font-size: 3.3rem;
+  }
 }
 
 h3 {
   font-size: 4rem;
+
+  @include respond(tab-port) {
+    font-size: 3.5rem;
+  }
+
+  @include respond(tab) {
+    font-size: 2.7rem;
+  }
 }
 
 h4 {
   font-size: 3rem;
+
+  @include respond(tab) {
+    font-size: 2.5rem;
+  }
 }
 
 p {
   font-size: 2.1rem;
   color: $color-text;
+
+  @include respond(tab) {
+    font-size: 1.9rem;
+  }
 }
 
 h1,

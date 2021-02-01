@@ -38,7 +38,7 @@ herotl
 setTimeout(() => {
   ScrollTrigger.create({
     trigger: '.text',
-    start: 'top-=300px top',
+    start: 'top 8vh',
     onEnter: (self) => {
       document.querySelector('.header').classList.add('active');
     },
@@ -66,12 +66,13 @@ document.querySelectorAll('.section').forEach((section) => {
     section.querySelector('.img'),
     { xPercent: xImg },
     {
+      delay: 0.1,
       duration: 1,
       xPercent: 0,
       ease: 'expo',
       scrollTrigger: {
         trigger: section.querySelector('.img'),
-        start: 'top 20%',
+        start: 'top bottom',
       },
     }
   );
@@ -79,13 +80,92 @@ document.querySelectorAll('.section').forEach((section) => {
     section.querySelector('.content'),
     { xPercent: xText },
     {
+      delay: 0.1,
       duration: 1,
       xPercent: 0,
       ease: 'expo',
       scrollTrigger: {
         trigger: section.querySelector('.img'),
-        start: 'top 20%',
+        start: 'top bottom',
       },
     }
   );
 });
+
+gsap.fromTo(
+  '.card',
+  { yPercent: 20, opacity: 0 },
+  {
+    delay: 0.1,
+    opacity: 1,
+    duration: 0.5,
+    yPercent: 0,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: '.section-cards',
+      start: 'top bottom',
+    },
+  }
+);
+
+gsap.fromTo(
+  '.member',
+  { yPercent: 50, opacity: 0 },
+  {
+    delay: 0.1,
+    duration: 0.4,
+    yPercent: 0,
+    opacity: 1,
+    stagger: 0.3,
+    scrollTrigger: {
+      trigger: '.section-managment',
+      start: 'top bottom',
+    },
+  }
+);
+
+gsap.fromTo(
+  '.member-2',
+  { yPercent: 50, opacity: 0 },
+  {
+    delay: 0.1,
+    duration: 0.4,
+    yPercent: 0,
+    opacity: 1,
+    stagger: 0.3,
+    scrollTrigger: {
+      trigger: '.section-managment-komisja',
+      start: 'top bottom',
+    },
+  }
+);
+
+gsap.fromTo(
+  '.support__card',
+  { yPercent: 50, opacity: 0 },
+  {
+    delay: 0.1,
+    duration: 0.5,
+    opacity: 1,
+    yPercent: 1,
+    scrollTrigger: {
+      trigger: '.section-support',
+      start: 'top bottom',
+    },
+  }
+);
+
+gsap.fromTo(
+  '.form',
+  { yPercent: 50, opacity: 0 },
+  {
+    delay: 0.1,
+    duration: 0.5,
+    opacity: 1,
+    yPercent: 1,
+    scrollTrigger: {
+      trigger: '.section-form',
+      start: 'top bottom',
+    },
+  }
+);

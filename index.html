@@ -35,6 +35,7 @@
 
     <script defer src="scripts/type.js"></script>
     <script defer src="scripts/animations.js"></script>
+    <script defer src="scripts/functionality.js"></script>
 
     <!-- Skrypty (moje) -->
   </head>
@@ -75,7 +76,7 @@
         </ul>
       </nav>
 
-      <div class="header__burger">
+      <div class="header__burger active">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
@@ -102,8 +103,7 @@
       </div>
       <div class="text text--center">
         <h1 class="text--light text--semi-bold mb-small">
-          Stowarzyszenie, które pomaga
-          <span class="text--border">uczniom</span>.
+          Stowarzyszenie, które pomaga uczniom.
         </h1>
         <h3 class="text--light mb-large">
           <span class="text--thin">Wspieramy</span>
@@ -136,7 +136,10 @@
         <a href="#stowarzyszenie" class="btn mt-large">Stowarzyszenie</a>
       </div>
       <div class="img">
-        <img src="./imgs/onas.jpg" alt="Zdjęcie sekcji o nas" />
+        <picture>
+          <source media="(max-width: 800px)" srcset="./imgs/onas_thin.jpg" />
+          <img src="./imgs/onas.jpg" alt="Image" />
+        </picture>
         <h2>O nas</h2>
       </div>
     </section>
@@ -164,8 +167,14 @@
         <a href="#projekty" class="btn mt-large">Projekty</a>
       </div>
       <div class="img">
-        <img src="./imgs/stowarzyszenie.jpg" alt="Zdjęcie sekcji o nas" />
-        <h2>Stowarzyszenie</h2>
+        <picture>
+          <source
+            media="(max-width: 800px)"
+            srcset="./imgs/stowarzyszenie_thin.jpg"
+          />
+          <img src="./imgs/stowarzyszenie.jpg" alt="Image" />
+        </picture>
+        <h2>Sądecki Elektryk</h2>
       </div>
     </section>
 
@@ -189,7 +198,13 @@
         </div>
       </div>
       <div class="img">
-        <img src="./imgs/stowarzyszenie.jpg" alt="Zdjęcie sekcji o nas" />
+        <picture>
+          <source
+            media="(max-width: 800px)"
+            srcset="./imgs/projekty_thin.jpg"
+          />
+          <img src="./imgs/projekty.jpg" alt="Image" />
+        </picture>
         <h2>Projekty</h2>
       </div>
     </section>
@@ -316,25 +331,19 @@
         </div>
       </div>
       <div class="img">
-        <img src="./imgs/stowarzyszenie.jpg" alt="Zdjęcie sekcji o nas" />
+        <picture>
+          <source media="(max-width: 800px)" srcset="./imgs/zarzad_thin.jpg" />
+          <img src="./imgs/zarzad.jpg" alt="Image" />
+        </picture>
         <h2>
-          Zarząd <br />
+          Zarząd/ <br />
           Komisja Rewizyjna
         </h2>
       </div>
     </section>
 
     <section class="section-managment">
-      <div class="card__small">
-        <h4>Edyta Nowak</h4>
-        <p>Wiceprezes</p>
-      </div>
-      <div class="card__small">
-        <h4>Małgorzata Matląg</h4>
-        <p>Członek zarządu</p>
-      </div>
-
-      <div class="card__big">
+      <div class="card__big member">
         <img src="./imgs/prezes.png" alt="Zdjęcie Prezesa" />
         <div class="card__big__content">
           <div class="label">
@@ -351,12 +360,20 @@
           </p>
         </div>
       </div>
+      <div class="card__small member">
+        <h4>Edyta Nowak</h4>
+        <p>Wiceprezes</p>
+      </div>
+      <div class="card__small member">
+        <h4>Małgorzata Matląg</h4>
+        <p>Członek zarządu</p>
+      </div>
 
-      <div class="card__small">
+      <div class="card__small member">
         <h4>Ewa Bereś</h4>
         <p>Członek zarządu</p>
       </div>
-      <div class="card__small">
+      <div class="card__small member">
         <h4>Tomasz Liber</h4>
         <p>Członek zarządu</p>
       </div>
@@ -365,15 +382,15 @@
     <section class="section-managment-komisja">
       <h2>Komisja rewizyjna</h2>
       <div class="cards">
-        <div class="card__small">
+        <div class="card__small member-2">
           <h4>Adam Niemczak</h4>
           <p>Przewodniczący</p>
         </div>
-        <div class="card__small">
+        <div class="card__small member-2">
           <h4>Grażyna Kantor</h4>
           <p>V-ce przewodniczący</p>
         </div>
-        <div class="card__small">
+        <div class="card__small member-2">
           <h4>Paulina Mordarska</h4>
           <p>Sekretarz</p>
         </div>
@@ -393,7 +410,13 @@
         </div>
       </div>
       <div class="img">
-        <img src="./imgs/wsparcie.jpg" alt="Zdjęcie sekcji o nas" />
+        <picture>
+          <source
+            media="(max-width: 800px)"
+            srcset="./imgs/wsparcie_thin.jpg"
+          />
+          <img src="./imgs/wsparcie.jpg" alt="Image" />
+        </picture>
         <h2>Wsparcie</h2>
       </div>
     </section>
@@ -401,11 +424,13 @@
     <section class="section-support">
       <div class="support__card">
         <i class="fas fa-piggy-bank"></i>
-        <div class="text">
+        <div class="support__text">
           <p>Bank BGŻ BNP Paribas S. A</p>
-          <p class="text--bold">98 2030 0045 1110 0000 0387 2230</p>
+          <p id="bank-number" class="text--bold">
+            98 2030 0045 1110 0000 0387 2230
+          </p>
         </div>
-        <i class="fas fa-clipboard"></i>
+        <i id="copy" class="fas fa-clipboard"></i>
       </div>
     </section>
 
@@ -420,7 +445,10 @@
         </div>
       </div>
       <div class="img">
-        <img src="./imgs/kontakt.jpg" alt="Zdjęcie sekcji o nas" />
+        <picture>
+          <source media="(max-width: 800px)" srcset="./imgs/kontakt_thin.jpg" />
+          <img src="./imgs/kontakt.jpg" alt="Image" />
+        </picture>
         <h2>Kontakt</h2>
       </div>
     </section>

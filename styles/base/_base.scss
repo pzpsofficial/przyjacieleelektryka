@@ -16,8 +16,17 @@
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
-  scroll-padding-top: 7.9rem;
+  scroll-padding-top: 8vh;
+
+  @include respond(tab-port) {
+    scroll-padding-top: 10vh;
+  }
+
   overflow-x: hidden;
+
+  @include respond(tab-land) {
+    font-size: 50%;
+  }
 }
 
 body {

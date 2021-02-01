@@ -19,6 +19,12 @@
     background-color: $color-secondary;
   }
 
+  @include respond(tab-port) {
+    width: 2rem;
+    height: 3.5rem;
+    border-width: 2px;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -30,6 +36,11 @@
     background-color: #fff;
     border-radius: 50%;
     transition: all 0.5s ease-in;
+
+    @include respond(tab-port) {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 }
 

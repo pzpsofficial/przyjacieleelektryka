@@ -2,6 +2,10 @@
   grid-column: 2/-2;
   padding: 5rem 0;
 
+  @include respond(tab) {
+    padding-top: 0;
+  }
+
   .support__card {
     position: relative;
     padding: 3rem;
@@ -16,6 +20,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include respond(tab-port) {
+      width: 80%;
+    }
+
+    @include respond(tab) {
+      width: 90%;
+    }
 
     i {
       color: $color-secondary;
@@ -36,6 +48,10 @@
     p {
       font-size: 3rem;
       color: $color-primary;
+
+      @include respond(tab) {
+        font-size: 2.3rem;
+      }
     }
   }
 }

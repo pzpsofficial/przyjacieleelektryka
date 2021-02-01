@@ -2,7 +2,7 @@
   grid-column: 2/-2;
   padding: 10rem 0 5rem 0;
   display: grid;
-  grid-column-gap: 5rem;
+  grid-gap: 3rem;
   grid-template-columns: repeat(auto-fit, minmax(min-content, 45rem));
   grid-template-rows: repeat(2, 1fr);
   justify-content: center;
@@ -15,6 +15,29 @@
 
     &:nth-of-type(even) {
       grid-row: 2/3;
+    }
+  }
+
+  @include respond(first-change) {
+    grid-template-columns: 1fr min-content 1fr;
+  }
+
+  @include respond(tab-port) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, min-content);
+
+    .card__small {
+      grid-column: 3/4;
+    }
+
+    .card__small {
+      &:nth-of-type(odd) {
+        grid-row: auto;
+      }
+
+      &:nth-of-type(even) {
+        grid-row: auto;
+      }
     }
   }
 }
