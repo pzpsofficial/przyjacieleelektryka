@@ -37,6 +37,7 @@
     <script defer src="scripts/type.js"></script>
     <script defer src="scripts/animations.js"></script>
     <script defer src="scripts/functionality.js"></script>
+    <script defer src="scripts/game.js"></script>
 
     <!-- Skrypty (moje) -->
   </head>
@@ -70,6 +71,9 @@
           </li>
           <li class="header__nav__li">
             <a href="#wsparcie" class="header__nav__a">Wsparcie</a>
+          </li>
+          <li class="header__nav__li">
+            <a href="#gra" class="header__nav__a">Gra</a>
           </li>
           <li class="header__nav__li">
             <a href="#kontakt" class="header__nav__a btn">Kontakt</a>
@@ -221,7 +225,12 @@
             Piknik naukowy w Elektryku to wydarzenie, podczas którego uczniowe
             mogą zaprezentować swoje talenty i wynalazki.
           </p>
-          <a href="#" class="btn">Więcej</a>
+          <a
+            href="http://stowarzyszenie.zsem.edu.pl/?page_id=1950"
+            target="_blank"
+            class="btn"
+            >Więcej</a
+          >
         </div>
       </div>
       <div class="card">
@@ -234,7 +243,12 @@
             Projekt ten umożliwia naszej młodzieży zdobycie umiejętności
             wykonywania samodzielnych projektów programistycznych.
           </p>
-          <a href="#" class="btn">Więcej</a>
+          <a
+            href="http://stowarzyszenie.zsem.edu.pl/?page_id=1674"
+            target="_blank"
+            class="btn"
+            >Więcej</a
+          >
         </div>
       </div>
       <div class="card">
@@ -248,7 +262,12 @@
             życia na Ziemi. Dla uczniów przygotowano liczne konkursy oraz
             nagordy.
           </p>
-          <a href="#" class="btn">Więcej</a>
+          <a
+            href="http://stowarzyszenie.zsem.edu.pl/?page_id=1757"
+            target="_blank"
+            class="btn"
+            >Więcej</a
+          >
         </div>
       </div>
       <div class="card">
@@ -262,7 +281,12 @@
             oraz 10 plansz w dużym formacie z których każda zawiera propozycję
             jednej wycieczki.
           </p>
-          <a href="#" class="btn">Więcej</a>
+          <a
+            href="http://stowarzyszenie.zsem.edu.pl/?page_id=1727"
+            target="_blank"
+            class="btn"
+            >Więcej</a
+          >
         </div>
       </div>
       <div class="card">
@@ -275,7 +299,12 @@
             Młodzież zaprezentowała swoje umiejętności, zdobyte podczas
             warsztatów poetyckich i teatralnych.
           </p>
-          <a href="#" class="btn">Więcej</a>
+          <a
+            href="http://stowarzyszenie.zsem.edu.pl/?page_id=1682"
+            target="_blank"
+            class="btn"
+            >Więcej</a
+          >
         </div>
       </div>
       <div class="card">
@@ -288,7 +317,12 @@
             W ramach memoriału odbył się turniej dla dzieci i młodzieży szkolnej
             oraz dla seniorów.
           </p>
-          <a href="#" class="btn">Więcej</a>
+          <a
+            href="http://stowarzyszenie.zsem.edu.pl/?page_id=1680"
+            target="_blank"
+            class="btn"
+            >Więcej</a
+          >
         </div>
       </div>
       <div class="card">
@@ -302,7 +336,12 @@
             których nasi szkolni eksperci przygotowali po trzy tematy/tezy do
             dyskusji.
           </p>
-          <a href="#" class="btn">Więcej</a>
+          <a
+            href="http://stowarzyszenie.zsem.edu.pl/?page_id=1678"
+            target="_blank"
+            class="btn"
+            >Więcej</a
+          >
         </div>
       </div>
       <div class="card">
@@ -315,7 +354,12 @@
             Projekt jest skierowany do młodych programistów, którzy będą mieli
             szanse sprawdzić swoje umiejętności dziedzinie programowania.
           </p>
-          <a href="#" class="btn">Więcej</a>
+          <a
+            href="http://stowarzyszenie.zsem.edu.pl/?page_id=1676"
+            target="_blank"
+            class="btn"
+            >Więcej</a
+          >
         </div>
       </div>
     </div>
@@ -475,6 +519,34 @@
       </form>
     </section>
 
+    <section class="section img-left" id="gra">
+      <div class="content">
+        <div class="content_text">
+          <p>
+            Zagraj w grę pamięciową o naszym stowarzyszeniu. Jest to gra
+            pamięciowa, gdzie należy zapamiętać w jakiej kolejności wyświetlą
+            się zdjęcia związane ze stowarzyszeniem. Następnie gra losuje który
+            obrazek mamy odgadnąć i należy kliknąć w odpowiednie pole.
+          </p>
+        </div>
+      </div>
+      <div class="img">
+        <picture>
+          <source media="(max-width: 800px)" srcset="./imgs/kontakt_thin.jpg" />
+          <img src="./imgs/kontakt.jpg" alt="Image" />
+        </picture>
+        <h2>Gra o stowarzyszeniu</h2>
+      </div>
+    </section>
+
+    <div class="section-gra">
+      <div class="info-panel">
+        <button class="btn game-btn">Zacznij grę</button>
+      </div>
+      <div class="game"></div>
+      <div class="score"></div>
+    </div>
+
     <footer class="footer">
       <h1 class="text--thin">
         Przyjaciele<span class="text--very--bold">Elektryka</span>
@@ -486,6 +558,10 @@
         <a target="_blank" href="https://bartoszkarpiel.netlify.app/"
           >Bartosz Karpiel</a
         >
+      </p>
+      <p>
+        “Sound effects obtained from
+        <a href="https://www.zapsplat.com">https://www.zapsplat.com</a>“
       </p>
     </footer>
   </body>

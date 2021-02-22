@@ -1,0 +1,23 @@
+.section-gra {
+  padding: 5rem 0;
+  grid-column: 1/-1;
+
+  .info-panel {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.game {
+  margin: 3rem 0 0 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  .img-container {
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
