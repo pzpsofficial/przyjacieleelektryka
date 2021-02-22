@@ -53,6 +53,7 @@ const gameConfig = {
 const state = {
   isPlaying: false,
   timerInterval: null,
+  score: 0,
 };
 
 const renderInfoPanel = () => {
@@ -77,6 +78,19 @@ const renderCards = () => {
   game.insertAdjacentHTML('afterbegin', markup);
 };
 
+const renderScoreSection = () => {
+  const markup = `
+        <h3>Twój wynik to: <span class="score"></span> ${state.score}</h3>
+    `;
+  score.insertAdjacentHTML('afterbegin', markup);
+};
+
+const reverseCards = () => {
+  const allImgs = document.querySelectorAll('.img-container');
+
+  allImgs.forEach((img) => img.classList.toggle('hide'));
+};
+
 const timer = () => {
   const timerSpan = document.querySelector('.timer');
   state.timerInterval = setInterval(() => {
@@ -84,6 +98,8 @@ const timer = () => {
 
     if (gameConfig.timeToStart === 0) {
       clearInterval(state.timerInterval);
+      reverseCards();
+      renderScoreSection();
     }
 
     timerSpan.textContent = gameConfig.timeToStart;
