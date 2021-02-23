@@ -728,16 +728,19 @@ h4 {
   grid-column: 1/-1; }
   .section-gra .info-panel {
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 3rem; }
 
 .game {
-  margin: 3rem 0 0 0;
   width: 100%;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(min-content, 40rem)); }
   .game .img-container {
-    position: relative; }
+    position: relative;
+    transition: all 0.5s ease-in; }
+    .game .img-container:hover {
+      cursor: pointer; }
     .game .img-container.hide::before {
       content: '?';
       position: absolute;
@@ -753,9 +756,36 @@ h4 {
       align-items: center;
       background-color: #047449;
       border: 5px solid #212121; }
+    .game .img-container.correct::before {
+      content: url("../imgs/check.png");
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 7rem;
+      color: #fff;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #07d787;
+      border: 5px solid #212121; }
     .game .img-container img {
       display: block;
       width: 100%; }
+
+.bar {
+  max-width: 1000px;
+  margin: 2rem auto 0 auto;
+  height: 1rem;
+  border-radius: 100;
+  background-color: #047449; }
+
+.score {
+  padding: 3rem 0 0 0;
+  width: 100%;
+  text-align: center; }
 
 .footer {
   grid-column: 1 / end;
