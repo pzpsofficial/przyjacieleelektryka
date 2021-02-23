@@ -168,6 +168,8 @@ const gamePlay = () => {
       el.classList.add('correct');
       winSound.play();
     } else {
+      el.classList.remove('hide');
+      el.classList.add('bad');
       loseSound.play();
     }
   });
