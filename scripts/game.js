@@ -1,21 +1,17 @@
 const gameContainer = document.querySelector('.section-gra');
 const infoPanel = document.querySelector('.info-panel');
-const game = document.querySelector('.game');
+let game = document.querySelector('.game');
 const score = document.querySelector('.score');
 const gameBtn = document.querySelector('.game-btn');
 
 const startSound = new Audio(
   require('../imgs/zapsplat_multimedia_game_sound_retro_car_racing_start_beeps_001_34949.mp3')
 );
-const winSound = new Audio(require('../imgs/cartoon_success_fanfair.mp3'));
-const loseSound = new Audio(
-  require('../imgs/zapsplat_cartoon_fail_negative_descending_musical_tuba_marimba_oboe_18126.mp3')
-);
-winSound.volume = 0.5;
+startSound.volume = 0.1;
 
 const gameConfig = {
   timeToStart: 10,
-  timeToAnswer: 3000,
+  timeToAnswer: 4000,
   imgs: [
     {
       id: 1,
@@ -68,11 +64,16 @@ const gameConfig = {
   ],
 };
 
+const shuffleImgs = () => {
+  gameConfig.imgs = gameConfig.imgs.sort(() => Math.random() - 0.5);
+};
+
 const state = {
   isPlaying: false,
   timerInterval: null,
   timeToAnswerInterval: null,
   score: 0,
+  isListening: false,
 };
 
 const renderInfoPanel = () => {
@@ -93,7 +94,7 @@ const renderCards = () => {
         `;
     })
     .join(' ');
-
+  game.innerHTML = '';
   game.insertAdjacentHTML('afterbegin', markup);
 };
 
@@ -112,6 +113,7 @@ const reverseCards = () => {
 };
 
 const timer = () => {
+  gameConfig.timeToStart = 10;
   const timerSpan = document.querySelector('.timer');
   state.timerInterval = setInterval(() => {
     gameConfig.timeToStart = gameConfig.timeToStart - 1;
@@ -131,52 +133,109 @@ const timer = () => {
   }, 1000);
 };
 
-const gamePlay = () => {
-  let num = Math.floor(Math.random() * gameConfig.imgs.length);
-  console.log(num);
+const endGame = () => {
   const markup = `
-    <img src="${gameConfig.imgs[num].url}" />
-    <div class="bar"></div>
+  <h3>Gratulujemy! Właśnie zakończyłeś swoją grę 👏👏👏</h3>
   `;
-  infoPanel.innerHTML = '';
+  infoPanel.textContent = '';
   infoPanel.insertAdjacentHTML('afterbegin', markup);
 
-  const bar = document.querySelector('.bar');
+  const scoreMarkup = `
+    <h3>Wynik jaki uzyskałeś to: ${state.score}</h3>
+    <div class="score__buttons">
+      <button class="btn restart-btn">Restart</button>
+    </div>
+  `;
+  score.innerHTML = '';
+  score.insertAdjacentHTML('afterbegin', scoreMarkup);
 
-  state.timeToAnswerInterval = setInterval(() => {
-    bar.style.width = `${0.3 * gameConfig.timeToAnswer}px`;
+  document.querySelector('.restart-btn').addEventListener('click', () => {
+    restartGame();
+  });
+};
 
-    if (gameConfig.timeToAnswer < 0) {
-      clearInterval(state.timeToAnswerInterval);
-    }
+let allImgs;
+let usedPhotos = [];
+let num;
 
-    gameConfig.timeToAnswer -= 1000;
-  }, 1000);
+const gamePlay = () => {
+  allImgs = document.querySelectorAll('.img-container');
 
-  game.addEventListener('click', (e) => {
+  const newItem = () => {
+    if (usedPhotos.length === gameConfig.imgs.length) return endGame();
+
+    const makeNum = () => {
+      num = Math.floor(Math.random() * gameConfig.imgs.length);
+      if (usedPhotos.includes(num)) {
+        console.log('Już Cię mam');
+        return makeNum();
+      }
+    };
+
+    makeNum();
+
+    const markup = `
+    <img class="infoImg" src="${gameConfig.imgs[num].url}" />
+
+  `;
+    infoPanel.innerHTML = '';
+    infoPanel.insertAdjacentHTML('afterbegin', markup);
+  };
+
+  newItem();
+
+  const gameListener = (e) => {
     const el = e.target;
     if (
       !el.classList.contains('img-container') ||
-      el.classList.contains('correct')
+      el.classList.contains('correct') ||
+      el.classList.contains('bad')
     )
       return;
 
-    if (Number(el.getAttribute('id')) === num + 1) {
+    if (el.children[0].src === document.querySelector('.infoImg').src) {
+      console.log('Matched');
       state.score++;
       renderScoreSection();
       el.classList.remove('hide');
       el.classList.add('correct');
-      winSound.play();
+      usedPhotos.push(num);
+      console.log(usedPhotos);
+      newItem();
     } else {
+      console.log('Did not match');
+      let goodAnswer;
+      allImgs.forEach((el) => {
+        if (el.children[0].src === document.querySelector('.infoImg').src) {
+          goodAnswer = el;
+        }
+      });
       el.classList.remove('hide');
-      el.classList.add('bad');
-      loseSound.play();
+      setTimeout(() => {
+        el.classList.add('hide');
+      }, 750);
+
+      goodAnswer.classList.remove('hide');
+      goodAnswer.classList.add('bad');
+
+      usedPhotos.push(num);
+
+      console.log(usedPhotos);
+      newItem();
     }
-  });
+  };
+
+  if (state.isListening === false) {
+    game.addEventListener('click', gameListener);
+    state.isListening = true;
+  }
 };
 
 const initGame = () => {
   state.isPlaying = true;
+
+  // Shuffle imgs
+  shuffleImgs();
 
   // Render info panel
   renderInfoPanel();
@@ -186,6 +245,18 @@ const initGame = () => {
 
   // Start timer
   timer();
+};
+
+const restartGame = () => {
+  allImgs = undefined;
+  usedPhotos = [];
+  state.isPlaying = false;
+  state.timerInterval = null;
+  state.timeToAnswerInterval = null;
+  state.score = 0;
+  gameConfig.timeToStart = 10;
+  renderScoreSection();
+  initGame();
 };
 
 gameBtn.addEventListener('click', () => {
