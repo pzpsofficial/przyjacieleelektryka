@@ -719,7 +719,7 @@ h4 {
 
 .section-social {
   grid-column: 1/-1;
-  padding: 6rem 0;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -729,6 +729,9 @@ h4 {
     color: inherit;
     font-size: 5rem;
     transition: color 0.5s ease-in; }
+    @media only screen and (max-width: 68.75em) {
+      .section-social .social__icon {
+        font-size: 3rem; } }
     .section-social .social__icon:not(:last-of-type) {
       margin-right: 3rem; }
     .section-social .social__icon:hover {
@@ -864,7 +867,7 @@ h4 {
 
 .footer {
   grid-column: 1 / end;
-  padding: 3rem 1rem;
+  padding: 0rem 1rem 3rem 1rem;
   background-color: #fff;
   color: #212121;
   display: flex;
