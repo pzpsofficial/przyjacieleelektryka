@@ -84,7 +84,7 @@
   background-color: $color-text;
   border-radius: 10px;
   text-align: center;
-  min-width: 43rem;
+  min-width: 40rem;
 
   @include respond(tab-port) {
     grid-row: 1/2;

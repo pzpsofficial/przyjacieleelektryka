@@ -72,7 +72,7 @@ document.querySelectorAll('.section').forEach((section) => {
       ease: 'expo',
       scrollTrigger: {
         trigger: section.querySelector('.img'),
-        start: 'top bottom',
+        start: 'top center',
       },
     }
   );
@@ -86,7 +86,7 @@ document.querySelectorAll('.section').forEach((section) => {
       ease: 'expo',
       scrollTrigger: {
         trigger: section.querySelector('.img'),
-        start: 'top bottom',
+        start: 'top center',
       },
     }
   );
@@ -102,8 +102,8 @@ gsap.fromTo(
     yPercent: 0,
     stagger: 0.2,
     scrollTrigger: {
-      trigger: '.section-cards',
-      start: 'top bottom',
+      trigger: '.card',
+      start: 'top center',
     },
   }
 );
@@ -119,7 +119,7 @@ gsap.fromTo(
     stagger: 0.3,
     scrollTrigger: {
       trigger: '.section-managment',
-      start: 'top bottom',
+      start: 'top center',
     },
   }
 );
@@ -135,7 +135,7 @@ gsap.fromTo(
     stagger: 0.3,
     scrollTrigger: {
       trigger: '.section-managment-komisja',
-      start: 'top bottom',
+      start: 'top center',
     },
   }
 );
@@ -148,9 +148,10 @@ gsap.fromTo(
     duration: 0.5,
     opacity: 1,
     yPercent: 1,
+    stagger: 0.7,
     scrollTrigger: {
       trigger: '.section-support',
-      start: 'top bottom',
+      start: 'top center',
     },
   }
 );
@@ -165,7 +166,49 @@ gsap.fromTo(
     yPercent: 1,
     scrollTrigger: {
       trigger: '.section-form',
-      start: 'top bottom',
+      start: 'top center',
+    },
+  }
+);
+
+gsap.fromTo(
+  '.reward_img',
+  { yPercent: 50, opacity: 0 },
+  {
+    duration: 0.5,
+    opacity: 1,
+    yPercent: 0,
+    scrollTrigger: {
+      trigger: '.reward_img',
+      start: 'top center',
+    },
+  }
+);
+
+gsap.fromTo(
+  '.social__icon',
+  { yPercent: 50, opacity: 0 },
+  {
+    duration: 0.5,
+    opacity: 1,
+    yPercent: 0,
+    scrollTrigger: {
+      trigger: '.section-social',
+      start: 'top center',
+    },
+  }
+);
+
+gsap.fromTo(
+  '.rewards-text',
+  { yPercent: 50, opacity: 0 },
+  {
+    duration: 1,
+    opacity: 1,
+    yPercent: 0,
+    scrollTrigger: {
+      trigger: '.rewards-text',
+      start: 'top center',
     },
   }
 );
